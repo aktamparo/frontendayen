@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iPhone 16e Silicone Case – Winter Blue</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="product-detail-container">
+        <div class="product-info">
+            <h1>iPhone 16e Silicone <br>Case – Winter Blue</h1>
+            <div class="price">$39.00</div>
+            <div class="month">or<br>$3.25/mo. per month for 12 mo.*</div>
+            <a class="discount" href="#">Get 3% Daily Cash with Apple Card <span class ="plus-icon">⊕</span></a>
+            <title>Dropdown Style</title>
+            <div class="dropdown-container">
+                <label class="dropdown-label">Size</label>
+                <select>
+                    <option selected>iPhone 16</option>
+                    <option>iPhone 16 Plus</option>
+                    <option>iPhone 16 Pro</option>
+                    <option>iPhone 16 Pro Max</option>
+                </select>
+                </div>
+
+                <div class="color-container">
+                    <h3 id="color-label">Color – Winter Blue</h3>
+                    <div class="color-dotss">
+                    <span class="color-dott" data-color="Lake Green" style="background-color: #2f595a;"></span>
+                    <span class="color-dott" data-color="Fuchsia" style="background-color: #b5427a;"></span>
+                    <span class="color-dott selected" data-color="Winter Blue" style="background-color: #7796b5;"></span>
+                    <span class="color-dott" data-color="White" style="background-color: #f6f6f6;"></span>
+                    <span class="color-dott" data-color="Black" style="background-color: #353737;"></span>
+                    </div>
+                </div>
+
+                <hr>
+
+                <script>
+                    const colorLabel = document.getElementById("color-label");
+                    const colorDots = document.querySelectorAll(".color-dott");
+
+                    let selectedColor = "Winter Blue"; 
+
+                    colorDots.forEach(dot => {
+                    const colorName = dot.dataset.color;
+
+                    
+                    dot.addEventListener("click", () => {
+                        document.querySelector(".color-dott.selected")?.classList.remove("selected");
+                        dot.classList.add("selected");
+                        selectedColor = colorName;
+                        colorLabel.textContent = "Color – " + selectedColor;
+                    });
+
+                    dot.addEventListener("mouseover", () => {
+                        colorLabel.textContent = "Color – " + colorName;
+                    });
+
+                 
+                    dot.addEventListener("mouseout", () => {
+                        colorLabel.textContent = "Color – " + selectedColor;
+                    });
+                    });
+                </script>
+
+
+            <div class="note">
+                To purchase with monthly pricing, add this item to your bag and choose to check out with Apple Card Monthly Installments.&#9830;
+            </div>
+            <div class = "delivery-container">
+            <div class="delivery">
+                <img src="deliver.png" class="icon">
+                <strong>Delivery:</strong>
+                <div class="dp-details">
+                    In Stock<br>
+                    Free Shipping<br>
+                    <a href="#" class="delivery-link">Get delivery dates <span class ="plus-icon">⊕</span></a>
+                </div>
+                </div>
+                </div>
+            <div class = "delivery-container">
+                <div class="pickup">
+                <img src="pickup.png" class="icon">
+                <strong>Pickup:</strong>
+                <div class="dp-details">
+                    <a href="#" class="pickup-link">Check availability <span class ="plus-icon">⊕</span></a>
+            </div>    
+            </div>
+            </div>
+            <button class="add-to-bag" onclick="location.href='index.html'">Add to Bag</button>
+
+        </div>
+        <div class="product-image-section">
+            <img id="main-product-img" src="5B.png" alt="iPhone 16 Pro Max Clear Case with MagSafe">
+            <div class="color-options">
+                <img src="5B.png" class="color-thumb selected" onclick="changeProductImage(this)">
+                <img src="5B1.png" class="color-thumb" onclick="changeProductImage(this)">
+                <img src="5B2.png" class="color-thumb" onclick="changeProductImage(this)">
+            </div>
+        </div>
+    </div>
+    <script>
+        function changeProductImage(thumb) {
+            document.getElementById('main-product-img').src = thumb.src;
+            document.querySelectorAll('.color-thumb').forEach(function(img) {
+                img.classList.remove('selected');
+            });
+            thumb.classList.add('selected');
+        }
+    </script>
+</body>
+</html>
